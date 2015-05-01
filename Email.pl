@@ -281,5 +281,4 @@ close CONFIGFILE;
 
 
 return 	$counter;
-
 }					
