@@ -36,8 +36,6 @@ my $emailFile;
 my $SUPERIOR_LIMIT = 20;								
 #this variable will tell us if there are too many lines in the file										
 my $linescounter=0;												
-
-my @results = (0, 0, 0, 0);
 #first pointer receives @VALUES adress
 $EElements[0]=\@VALUES;		
 
@@ -281,9 +279,7 @@ else
 close EMAILFILE;
 close CONFIGFILE;	
 
-my @Results = ($PARTS{'RECEIVEDATE'}, )
 
-return 	\@Results;
-	
+return 	$counter;
 
 }					
