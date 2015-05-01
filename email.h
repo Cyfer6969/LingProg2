@@ -1,0 +1,6 @@
+#IFNDEF EMAIL_H
+#DEFINE EMAIL_H
+
+class
+
+#ENDIF
