@@ -272,13 +272,9 @@ else
 			}
 		}
 	}
-	
-
-
  
 close EMAILFILE;
 close CONFIGFILE;	
-
 
 return 	$counter;
 }					
