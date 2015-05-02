@@ -18,24 +18,33 @@
 
 #define SPAM                    7
 
+
 using std::vector;
 using std::string;
 
 class Files {
 
+	static const vector<string> NAME_VECTOR[];
 	public:
 		Files(int, int);
 		~Files();
 		void printTable();
-		void printEmail(int topics);
+		void printEmail(int topics, int);
+		void printAllEmails(int topics);
 
 		int getTotal();
-		void setEmail(string);
+//		string getSpam();
+		void setEmail(string, int);
 		void setTotal(int);
+		void setSpam(string, int);
+		int getSpamCount();
+
 	private:
 		int total;
+		int spamCounter;
 		bool FULL;
 		vector<vector<string> > email;
+		vector<string> emailTopic;
 		//estrutura = ID, NOME_ARQUIVO, FROM, SUBJECT, DATE, HOUR, BODY, SPAM
 };
 
