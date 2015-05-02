@@ -1,13 +1,7 @@
-- [ ] blabla
-- [ ]  blabla
-- [ ]  blabla
-- [ ]  blabla
-- [ ]  blabla
-- [ ]  blabla
+These are not in order of importance / chronologic order
 
-
-- [ ]  blabla
-- [ ]  blabla
-- [ ]  blabla
-- [x]  blabla
-- [x]  blabla
+- [ ]  Complete Files class
+- [ ]  Manage Directory Files
+- [ ]  Import to UNIX
+- [ ]  Change what is needed with the Perl subroutine
+- [ ]  Integrate with Perl subroutines
