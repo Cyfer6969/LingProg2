@@ -1,13 +1,13 @@
-[]  blabla
-[]  blabla
-[]  blabla
-[]  blabla
-[]  blabla
-[]  blabla
+- [ ] blabla
+- [ ]  blabla
+- [ ]  blabla
+- [ ]  blabla
+- [ ]  blabla
+- [ ]  blabla
 
 
-[]  blabla
-[]  blabla
-[]  blabla
-[x]  blabla
-[x]  blabla
+- [ ]  blabla
+- [ ]  blabla
+- [ ]  blabla
+- [x]  blabla
+- [x]  blabla
