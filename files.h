@@ -18,6 +18,8 @@
 
 #define SPAM                    7
 
+#define SPAM_LIMIT				45
+
 
 using std::vector;
 using std::string;
@@ -29,8 +31,9 @@ class Files {
 		Files(int, int);
 		~Files();
 		void printTable();
-		void printEmail(int topics, int);
-		void printAllEmails(int topics);
+		void printEmail(int, int);
+		void printAllEmails(int);
+		void classifyEmail(vector<string>);
 
 		int getTotal();
 //		string getSpam();

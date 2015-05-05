@@ -90,6 +90,8 @@ void Files::setEmail(string filename, int ID){
 		std::cout << "Problem opening file" << std::endl;
 	}
 
+	email[ID][SPAM] = "Not Classified Yet";
+
 	file.close ();
 }
 
@@ -132,5 +134,20 @@ int Files::getSpamCount(){
 
 void Files::setSpam (string spam, int ID){
 	email[ID][SPAM] = spam;
+}
+
+void Files::classifyEmail(vector<string> email){
+
+//	total = email.size();
+	for (int i = 0; i < email.size(); i++){
+
+	int result = 0; //resultado do API em Perl
+	//result = chamadaDoPerl(email[i]) -> email[i] [e o endereco do email.txt para cada email existente
+
+	if (result >= SPAM_LIMIT)
+		this->setSpam("Yes", i);
+	else
+		this->setSpam("No", i);
+	}
 }
 
