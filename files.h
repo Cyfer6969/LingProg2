@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include "perl.h"
 
 #define EMAIL_ELEMENTS          9
 
@@ -36,7 +37,7 @@ class Files {
 		void printTable();
 		void printEmail(int, int);
 		void printAllEmails(int);
-		void classifyEmail(vector<string>);
+		void classifyEmail();
 
 		int getTotal();
 //		string getSpam();

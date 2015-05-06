@@ -5,7 +5,8 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     files.cpp \
-    filedir.cpp
+    filedir.cpp \
+    perl.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -13,5 +14,9 @@ qtcAddDeployment()
 HEADERS += \
     files.h \
     error.h \
-    filedir.h
+    filedir.h \
+    perl.h
+
+DISTFILES += \
+    Email.pl
 
