@@ -6,9 +6,20 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 	int option = 0;
+	int removeID =0;
 	int ID = 0;
+	vector<string> emailFiles;
+	Filedir f("./email");
 
-	Files f(EMAIL_ELEMENTS, 5); // topics, !!!!!!!!TOTAL!!!!!!!
+	int totalEmails = f.searchDir("txt", emailFiles);
+
+	//emailFiles.push_back ("C:/Users/Cyfer/Documents/GitHub/LingProg2/email.txt");
+	//emailFiles.push_back ("C:/Users/Cyfer/Documents/GitHub/LingProg2/email1.txt");
+	//emailFiles.push_back (strcat ("C:/Users/Cyfer/Documents/GitHub/LingProg2","/email1.txt"));
+
+
+
+	Files f(EMAIL_ELEMENTS, totalEmails); // topics, !!!!!!!!TOTAL!!!!!!!
 //	std::ifstream file("C:/Users/Cyfer/Documents/GitHub/LingProg2/email.txt");
 
 	cout << "total: " << f.getTotal() << endl;
@@ -27,12 +38,18 @@ int main(int argc, char *argv[])
 		cin >> option;
 		switch(option) {
 			case(1):
-				f.setEmail ("C:/Users/Cyfer/Documents/GitHub/LingProg2/email.txt", 0);
+					cout << "Choose the ID of the email to be removed" << endl;
+					cin >> removeID;
+					if(remove(f.getPath(removeID)) != 0){
+						cout << "Error deleting file" << endl;
+					}
+					else {cout << "File deleted Succefully" << endl;}
 				break;
 			case(2):
 				f.printTable();
 				break;
 			case(3):
+				f.setEmail (emailFiles);
 //				f.setSpam ("Sim", 0);
 				break;
 			case(4):

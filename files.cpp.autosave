@@ -169,3 +169,6 @@ void Files::classifyEmail(vector<string> email){
 	}
 }
 
+string Files::getPath(int ID){
+	return email[ID][PATH];
+}

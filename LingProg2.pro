@@ -4,12 +4,14 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    files.cpp
+    files.cpp \
+    filedir.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
 
 HEADERS += \
     files.h \
-    error.h
+    error.h \
+    filedir.h
 
