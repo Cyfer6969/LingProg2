@@ -43,7 +43,7 @@ int FileDir::searchDir (string extension){
 	internalExtension = extension;
 	int emailCounter = 0;
 	dir.clear ();
-	email.clear();
+	emailNames.clear();
 
 	while ((dirp = readdir(dp)) != NULL) {
 
@@ -57,8 +57,8 @@ int FileDir::searchDir (string extension){
 				string directory = nameDir;
 				directory.append (string(dirp->d_name));
 				//std::cout << directory.c_str() << std::endl;
-				//email.resize(emailCounter);
-				email.push_back(directory);
+				//emailNames.resize(emailCounter);
+				emailNames.push_back(directory);
 			}
 
 		}
@@ -71,9 +71,9 @@ int FileDir::searchDir (string extension){
 vector <string> FileDir::getEmailFile(bool deleted){
 	if(deleted){
 		this->searchDir(internalExtension);
-		return email;
+		return emailNames;
 	}
 	else
-		return email;
+		return emailNames;
 
 }

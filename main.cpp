@@ -2,15 +2,12 @@
 #include "error.h"
 #include "filedir.h"
 #include <limits>
-#include "perl.h"
 
 using namespace std;
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[], char **env)
 {
-
 	PERL_SYS_INIT3(&argc, &argv, &env);
-
 
 	int option = 0;
 	int removeID =0;
@@ -39,22 +36,24 @@ int main(int argc, char *argv[])
 		switch(option) {
 			case(1):
 				cout << "Choose the ID of the email to be removed" << endl;
-				cin >> removeID;
+				while (!(cin >> removeID) || removeID < 1 || removeID >= f.getTotal()) { cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n'); cout << "Enter only with an integer from 1 to " << f.getTotal()-1 <<endl;}
 				if(remove(f.getPath(removeID).c_str()) != 0){
 					cout << "Error deleting file" << endl;
 				}
 				else {
 					cout << "File deleted Succefully" << endl;
 					f.setTotal(f.getTotal()-1);
-					f.setEmail(file.getEmailFile(true));
+					FileDir file2("./email/");
+					file2.searchDir("txt");
+					f.setEmail(file2.getEmailFile(false));
 				}
 				break;
 			case(2):
 				f.printTable();
 				break;
 			case(3):
-				//f.classify
-				//				f.setSpam ("Sim", 0);
+				f.classifyEmail();
+								//				f.setSpam ("Sim", 0);
 				break;
 			case(4):
 				cout << "The total amount of emails in this directory is : "

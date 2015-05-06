@@ -1,6 +1,5 @@
 ﻿#include "files.h"
 
-
 Files::Files(int topics, int total_){
 
 	FULL = false;
@@ -156,10 +155,13 @@ void Files::setSpam (string spam, int ID){
 }
 
 void Files::classifyEmail(){
+	int result =0;
 
+	//this->setEmail(filename);
 	for (int i = 0; i < total; i++){
-		int result = getSpam(email[i][PATH]);
-
+		std::cout << i << email[i][PATH] << std::endl;
+		result = getSpam(email[i][PATH]);
+		// int result = 0;
 		if (result >= SPAM_LIMIT)
 			this->setSpam("Yes", i);
 		else

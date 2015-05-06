@@ -22,7 +22,7 @@ class FileDir {
 		vector<string> getEmailFile(bool);
 	private:
 		vector <string> dir;
-		vector <string> email;
+		vector <string> emailNames;
 		string internalExtension;
 		string nameDir;
 		DIR *dp;
