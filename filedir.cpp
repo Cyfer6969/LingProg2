@@ -38,27 +38,42 @@ void FileDir::listDir () {
 }
 void FileDir::setNameDir (string n) { nameDir = n;}
 
-int FileDir::searchDir (string extension, vector<string> files){
+int FileDir::searchDir (string extension){
+	
+	internalExtension = extension;
 	int emailCounter = 0;
 	dir.clear ();
+	email.clear();
 
 	while ((dirp = readdir(dp)) != NULL) {
 
-		if(string(dirp->d_type) == DT_REG){
+		if(dirp->d_type == DT_REG){
 
 			string filename = dirp->d_name;
 
-			if(filename.find(extension, (filename.lenght() - extension.lenght()) ) != string::npos ){
+			if(filename.find(extension, (filename.length() - extension.length()) ) != string::npos ){
+				emailCounter++;
 
 				string directory = nameDir;
 				directory.append (string(dirp->d_name));
-				files.push_back(directory);
-				emailCounter++;
+				//std::cout << directory.c_str() << std::endl;
+				//email.resize(emailCounter);
+				email.push_back(directory);
 			}
 
 		}
 
 	}
 	return emailCounter;
+
+}
+
+vector <string> FileDir::getEmailFile(bool deleted){
+	if(deleted){
+		this->searchDir(internalExtension);
+		return email;
+	}
+	else
+		return email;
 
 }

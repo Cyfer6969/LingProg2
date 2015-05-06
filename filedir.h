@@ -18,9 +18,12 @@ class FileDir {
 		int getDirSize ();
 		void setNameDir (string);
 		void listDir ();
-		int searchDir(string, vector<string>);
+		int searchDir(string);
+		vector<string> getEmailFile(bool);
 	private:
 		vector <string> dir;
+		vector <string> email;
+		string internalExtension;
 		string nameDir;
 		DIR *dp;
 		struct dirent *dirp;

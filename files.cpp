@@ -74,10 +74,11 @@ void Files::setEmail(vector<string> filename){
 	string line;
 	int counter = 0;
 
+//	std::cout << filename.size() << std::endl;
 	for(int i = 0; i < filename.size(); i++){
 	//	std::cout<<filename[i] << std::endl;
-	std::ifstream file(filename[i]);
-//	std::cout << filename[i] << std::endl;
+	std::ifstream file(filename[i].c_str());
+	//std::cout << filename[i] << std::endl;
 //	std::cout << file.is_open ()<<std::endl;
 
 	if ( file.is_open() ) {
@@ -170,5 +171,5 @@ void Files::classifyEmail(vector<string> email){
 }
 
 string Files::getPath(int ID){
-	return email[ID][PATH];
+	return email[ID-1][PATH];
 }
