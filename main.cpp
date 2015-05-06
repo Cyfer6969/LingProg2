@@ -1,5 +1,6 @@
 ﻿#include "files.h"
 #include "error.h"
+#include "filedir.h"
 
 using namespace std;
 
