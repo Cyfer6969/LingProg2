@@ -17,9 +17,13 @@ Each of the options above yields the following :
 
 1. Remove an email based on his ID that appears in the table.
 
-2. Call the so said table, showing all emails present in ./emails/ folder showing their ID, Subject, 
-who's it From, Receive Date and Hour, alongside the column SPAM that labels each email with one of three tags:
-"Not Classified" , "Yes", "No", 
+2. This option calls the table below, which show the e-mail info alongside the Spam column that receives one of the three folowing tags:
+
+| Id    | From   | Subject | Receive Date | Receive Hour | Spam |
+| :----- |:------:| :-------:|:--------------:|:--------------:|:------:|
+| 1     | ex	 | S1 	   |   24/4/2013  |  14 30     |    Non Classified  |
+| 2     | ex2    | S2 	   |   15/5/2009  |   15 14    |   Yes  	    |
+| 3 	| ex3    | S3 	   |   14/7/2005  |     16 16  |   N	            |
 
   * "Not Classified" - > The email has not yet been classified.
   * "Yes" - > The email IS a spam.
