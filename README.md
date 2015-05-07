@@ -17,18 +17,12 @@ Each of the options above yields the following :
 
 1. Remove an email based on his ID that appears in the table.
 
-2. This option calls the table below, which show the e-mail info alongside the Spam column that receives one of the three folowing tags:
-
-| Id    | From   | Subject | Receive Date | Receive Hour | Spam |
-| :----- |:------:| :-------:|:--------------:|:--------------:|:------:|
-| 1     | ex	 | S1 	   |   24/4/2013  |  14 30     |    Non Classified  |
-| 2     | ex2    | S2 	   |   15/5/2009  |   15 14    |   Yes  	    |
-| 3 	| ex3    | S3 	   |   14/7/2005  |     16 16  |   N	            |
+2. This option calls the table below (end of README), which show the e-mail info alongside the Spam column that receives one of the three folowing tags:
 
   * "Not Classified" - > The email has not yet been classified.
   * "Yes" - > The email IS a spam.
   * "No" - > The email is NOT a spam.
-
+ 
 3. This input classifies all emails in the ./emails/ folder, while seemingly not showing an 
 immediate response, all the user has to do is input (2) again, so that the table get's reprinted on the screen.
 
@@ -42,3 +36,15 @@ make this option return useful information, option (3) must be selected beforeha
 7. Show the menu again at (almost) any time
 
 8. Exits the program.
+
+Table
+----------
+
+
+| Id    | From   | Subject | Receive Date | Receive Hour | Spam |
+| :----- |:------:| :-------:|:--------------:|:--------------:|:------:|
+| 1     | ex	 | S1 	   |   24/4/2013  |  14 30     |    Non Classified  |
+| 2     | ex2    | S2 	   |   15/5/2009  |   15 14    |   Yes  	    |
+| 3 	| ex3    | S3 	   |   14/7/2005  |     16 16  |   N	            |
+
+
