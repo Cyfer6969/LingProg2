@@ -1,4 +1,6 @@
-﻿This project consists of an email (file) manager, once you execute trab2 (ONLY WORKS ON UNIX DISTRIBUTIONS),
+(ONLY WORKS ON UNIX DISTRIBUTIONS)
+------
+This project consists of an email (file) manager, once you execute trab2,
 The following menu will appear :
 
 		"Menu: " 
@@ -19,9 +21,9 @@ Each of the options above yields the following :
 who's it From, Receive Date and Hour, alongside the column SPAM that labels each email with one of three tags:
 "Not Classified" , "Yes", "No", 
 
-"Not Classified" - > The email has not yet been classified.
-"Yes" - > The email IS a spam.
-"No" - > The email is NOT a spam.
+  * "Not Classified" - > The email has not yet been classified.
+  * "Yes" - > The email IS a spam.
+  * "No" - > The email is NOT a spam.
 
 3. This input classifies all emails in the ./emails/ folder, while seemingly not showing an 
 immediate response, all the user has to do is input (2) again, so that the table get's reprinted on the screen.
