@@ -1,4 +1,21 @@
-﻿#include "files.h"
+﻿/*
+	To enable DEBUGMODE
+	Simply run
+
+	make CPPFLAGS=-DDEBUGMODE
+
+
+	Alunos:
+		Luiz Renno Costa
+		Rennan Emanuelli Rotunno
+	Prof:
+		Miguel Elias
+
+	Segundo trabalho de Linguagens de
+	Programacao 2015.1
+
+*/
+#include "files.h"
 #include "error.h"
 #include "filedir.h"
 #include <limits>
@@ -14,8 +31,7 @@ int main(int argc, char *argv[], char **env)
 	int ID = 0;
 	FileDir file("./email/");
 
-	int totalEmails = file
-			.searchDir("txt");
+	int totalEmails = file.searchDir("txt");
 
 	Files f(EMAIL_ELEMENTS, totalEmails);
 
@@ -26,11 +42,12 @@ int main(int argc, char *argv[], char **env)
 		 << "4. Count All Emails"		<< endl
 		 << "5. Count All Spams"		<< endl
 		 << "6. Show Email Info By ID"	<< endl
-		 << "7. Exit"					<< endl;
+		 << "7. Show Menu"				<< endl
+		 << "8. Exit"					<< endl;
 
 	f.setEmail(file.getEmailFile(false));
 
-	while (option != 7){
+	while (option != 8){
 		cout << "Choose a Menu Option: ";
 		while (!(cin >> option)) { cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n'); cout << "Invalid Input"<<endl;}
 		switch(option) {
@@ -53,7 +70,6 @@ int main(int argc, char *argv[], char **env)
 				break;
 			case(3):
 				f.classifyEmail();
-								//				f.setSpam ("Sim", 0);
 				break;
 			case(4):
 				cout << "The total amount of emails in this directory is : "
@@ -73,13 +89,21 @@ int main(int argc, char *argv[], char **env)
 				f.printEmail (EMAIL_ELEMENTS, ID-1);
 				break;
 			case(7):
+				cout << "Menu: " << endl;
+				cout << "1. Remove Email By ID"		<< endl
+					 << "2. Show All Emails"		<< endl
+					 << "3. Classify Emails"		<< endl
+					 << "4. Count All Emails"		<< endl
+					 << "5. Count All Spams"		<< endl
+					 << "6. Show Email Info By ID"	<< endl
+					 << "7. Show Menu"				<< endl
+					 << "8. Exit"					<< endl;
+				break;
+			case(8):
 				cout << "Ending Program" << endl;
 				return EXIT_FROM_USER;
-				break;
-				//	case(8):
-				//		break;
 			default:
-				cout << "Please Enter a Number from 1 to 7." << endl;
+				cout << "Please Enter an Integer from 1 to 8." << endl;
 				break;
 		}
 

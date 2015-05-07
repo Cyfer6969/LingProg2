@@ -2,10 +2,10 @@
 CC = g++
 LD = g++
 
-CFLAGS = -Wall $(shell perl -MExtUtils::Embed -e ccopts)
-LFLAGS = -Wall $(shell perl -MExtUtils::Embed -e ldopts)
+CFLAGS = -Wall $(shell perl -MExtUtils::Embed -e ccopts) -DDEBUGMODE
+LFLAGS = -Wall -L/usr/lib/i386-linux-gnu $(shell perl -MExtUtils::Embed -e ldopts)
 
-LINGPROGOBJS = main.o filedir.o files.o  Aperl.o
+LINGPROGOBJS = main.o filedir.o files.o  PerlInterpreter.o
 
 EXECS = trab2
 
@@ -17,7 +17,6 @@ all: $(EXECS)
 
 
 trab2: $(LINGPROGOBJS)
-#	$(LD) $(LFLAGS) -o $@ $(LINGPROGOBJS) 
 	$(LD) -o $@ $(LINGPROGOBJS) $(LFLAGS)
 
 clean:

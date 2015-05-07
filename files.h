@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include "Aperl.h"
+#include "PerlInterpreter.h"
 
 #define EMAIL_ELEMENTS          9
 
@@ -24,7 +24,6 @@
 
 #define super_Table(argument)	for(int column = 1; column <= total; column++){ std::cout << argument << "\t";}
 
-
 using std::vector;
 using std::string;
 
@@ -38,9 +37,9 @@ class Files {
 		void printEmail(int, int);
 		void printAllEmails(int);
 		void classifyEmail();
+		void setHour(int);
 
 		int getTotal();
-//		string getSpam();
 		void setEmail(vector<string>);
 		void setTotal(int);
 		void setSpam(string, int);
@@ -54,7 +53,6 @@ class Files {
 		bool TRANSPOST;
 		vector<vector<string> > email;
 		vector<string> emailTopic;
-		//estrutura = ID, NOME_ARQUIVO, FROM, SUBJECT, DATE, HOUR, BODY, SPAM
 };
 
 #endif

@@ -15,7 +15,7 @@ use warnings;
 #Lib created by us, it holds the tests function.
 use spamLib; 
 
-sub teste{
+sub Main{
 
 my ($email) = @_;
 #@EElements is a vector just to organise the code. The first element is a pointer and it will point to @VALUES, the second one is a pointer 

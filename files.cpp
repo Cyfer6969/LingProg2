@@ -1,4 +1,6 @@
 ﻿#include "files.h"
+#include "error.h"
+#include <cstddef>
 
 Files::Files(int topics, int total_){
 
@@ -64,10 +66,6 @@ int Files::getTotal(){
 	return total;
 }
 
-// string** Files::getEmail(){
-// 	return email;
-// }
-
 void Files::setEmail(vector<string> filename){
 
 	string line;
@@ -75,11 +73,7 @@ void Files::setEmail(vector<string> filename){
 
 //	std::cout << filename.size() << std::endl;
 	for(int i = 0; i < filename.size(); i++){
-	//	std::cout<<filename[i] << std::endl;
 	std::ifstream file(filename[i].c_str());
-	//std::cout << filename[i] << std::endl;
-//	std::cout << file.is_open ()<<std::endl;
-
 	if ( file.is_open() ) {
 		while( getline(file,line) ) {
 	//		std::cout << line << std::endl;
@@ -107,6 +101,15 @@ void Files::setEmail(vector<string> filename){
 
 	email[i][SPAM] = "Not Classified Yet";
 	email[i][PATH] = filename[i];
+	setHour(i);
+
+	DEBUG_MSG(email[i][RDATE]);
+	DEBUG_MSG(email[i][SDATE]);
+	DEBUG_MSG(email[i][FROM]);
+	DEBUG_MSG(email[i][SUBJECT]);
+	DEBUG_MSG(email[i][BODY]);
+	DEBUG_MSG(email[i][SPAM]);
+	DEBUG_MSG(email[i][PATH]);
 
 	file.close ();
 	counter = 0;
@@ -159,9 +162,9 @@ void Files::classifyEmail(){
 
 	//this->setEmail(filename);
 	for (int i = 0; i < total; i++){
-		std::cout << i << email[i][PATH] << std::endl;
+		DEBUG_MSG(email[i][PATH]);
 		result = getSpam(email[i][PATH]);
-		// int result = 0;
+		/// int result = 0;
 		if (result >= SPAM_LIMIT)
 			this->setSpam("Yes", i);
 		else
@@ -171,4 +174,25 @@ void Files::classifyEmail(){
 
 string Files::getPath(int ID){
 	return email[ID-1][PATH];
+}
+
+void Files::setHour(int ID){
+
+	std::size_t position = email[ID][SDATE].find_first_of("1234567890");
+
+	if(position != std::string::npos){
+
+		email[ID][SDATE_HOUR] = email[ID][SDATE].substr((position + (2+1+2+1+4)));
+		email[ID][SDATE] = email[ID][SDATE].substr(position, (2+1+2+1+4));
+	}	
+
+	position = email[ID][RDATE].find_first_of("1234567890");
+	if(position != std::string::npos){
+
+		email[ID][RDATE_HOUR] = email[ID][RDATE].substr((position + (2+1+2+1+4)));
+		email[ID][RDATE] = email[ID][RDATE].substr(position, (2+1+2+1+4));
+	}
+
+
+
 }
