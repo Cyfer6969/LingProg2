@@ -3,7 +3,7 @@ CC = g++
 LD = g++
 
 CFLAGS = -Wall $(shell perl -MExtUtils::Embed -e ccopts) -DDEBUGMODE
-LFLAGS = -Wall -L/usr/lib/i386-linux-gnu $(shell perl -MExtUtils::Embed -e ldopts)
+LFLAGS = -Wall -L/./ $(shell perl -MExtUtils::Embed -e ldopts)
 
 LINGPROGOBJS = main.o filedir.o files.o  PerlInterpreter.o
 
