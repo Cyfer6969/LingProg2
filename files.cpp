@@ -27,6 +27,10 @@ Files::Files(int topics, int total_){
 	emailTopic[5] = "SUBJECT";
 	emailTopic[6] = "BODY";
 	emailTopic[7] = "SPAM";
+<<<<<<< HEAD
+=======
+	emailTopic[8] = "PATH";
+>>>>>>> 89c8453233ea3dcd0eb8d0d72390d2fab618890c
 
 
 }
